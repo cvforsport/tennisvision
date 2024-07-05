@@ -1,0 +1,21 @@
+@startuml
+package "Frontend" {
+    [Next.js App] -down-> [Workbox]
+    [Workbox] --> [Service Worker] : Gestion des ressources et des caches
+}
+
+package "Backend" {
+    [Node.js avec Express] -down-> [PostgreSQL]
+}
+
+package "Services Cloud" {
+    [AWS S3] -down-> [AWS Lambda]
+    [Amazon Cognito]
+}
+
+[Next.js App] --> [Node.js avec Express] : Requêtes API
+[Next.js App] --> [Amazon Cognito] : Authentification
+[Node.js avec Express] --> [AWS S3] : Stockage des vidéos
+[Node.js avec Express] --> [AWS Lambda] : Traitement des vidéos
+
+@enduml

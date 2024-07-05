@@ -1,0 +1,32 @@
+@startuml
+start
+
+:Accès utilisateur \n sur le court;
+if (NFC activé ?) then (oui)
+  :Activation via NFC;
+else (non)
+  :Scan du QR Code;
+  :Vérification Géolocalisation;
+endif
+
+
+if (Utilisateur inscrit \n et authentifié ?) then (oui)
+else (non)
+  :Inscription et Authentification;
+endif
+
+
+
+:Sélection de la Durée;
+:Activation des Caméras;
+':Enregistrement de la Partie;
+
+while (Durée atteinte ou NFC touché ?) is (non)
+  :Enregistrement de la Partie;
+endwhile (oui)
+:Terminaison de l'enregistrement de la Partie;
+:Finalisation traitement vidéo;
+:Notification utilisateur;
+
+stop
+@enduml

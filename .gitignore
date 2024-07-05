@@ -1,0 +1,8 @@
+# Exclure tous les fichiers vidéo
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# Exclure tous les fichiers modèles
+*.pt 
